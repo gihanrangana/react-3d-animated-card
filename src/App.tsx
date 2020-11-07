@@ -27,7 +27,7 @@ function App() {
                     }
                 }}
                 style={{
-                    width:560 //container style (you can use className as well)
+                    width:'calc(100vh - 100px)' //container style (you can use className as well)
                 }}
             >
 

@@ -1,46 +1,104 @@
-# Getting Started with Create React App
+# @sl-codeblaster/react-3d-animated-card
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 3D Animated card component for ReactJs.
 
-## Available Scripts
+[![NPM](https://img.shields.io/npm/v/@sl-codeblaster/react-3d-animated-card.svg)](https://www.npmjs.com/package/@sl-codeblaster/react-3d-animated-card) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-In the project directory, you can run:
+## Install
 
-### `yarn start`
+with npm
+```bash
+npm install --save @sl-codeblaster/react-3d-animated-card
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+with yarn
+```bash
+yarn add @sl-codeblaster/react-3d-animated-card
+```
+You should need to import css file to your css file.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`@import "~@sl-codeblaster/react-3d-animated-card/dist/index.css";`
 
-### `yarn test`
+###[Live Demo](https://react-3d-animated-card.netlify.app)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![alt text](https://github.com/SL-CodeBlaster/react-3d-animated-card/blob/main/Screenshot.jpg?raw=true)
 
-### `yarn build`
+##Usage
+```
+<AnimatedCard
+    config={{
+        rotation: 15, // this value for the divide (window.innerWidth / 2 - e.pageX) / rotation && (window.innerWidth / 2 - e.pageY) / rotation
+        transition:{
+            duration:0.5,
+            timingMode: "ease"
+        },
+        transform:{
+            figureIcon: {
+                rotation: 20,
+                translateZ: 160
+            },
+            titleTranslateZ: 140,
+            bodyTextTranslateZ: 100,
+            buttonTranslateZ: 80
+        }
+    }}
+    style={{
+        width:560 //container style (you can use className as well)
+    }}
+>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    <div className="card">
+        <div className="figure">
+            <div className="figure_bg"/> // not required, just used for design
+            <img src={require('./images/image.png').default} alt=""/>
+        </div>
+        <div className="content">
+            <h2 className="title">Animated Card</h2>
+            <p className={"body"}>Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry</p>
+        </div>
+        <div className="footer">
+            <button className={"footer_btn"}>BUTTON</button>
+        </div>
+    </div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+</AnimatedCard>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##Configuration
+use `config` prop to pass configuration object to the component.
 
-### `yarn eject`
+| Property      | Value         |
+| ------------- |:--------------|
+| rotation      | number        |
+| transition    | object        |
+| transform     | object        |
+| style         | react default style object |
+| className     | string        |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`transition` object
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Property      | Value         |
+| ------------- |:--------------|
+| duration      | number        |
+| timingMode    | `'ease','ease-out','ease-in','ease-in-out'` use one of these|
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`transform` object
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+| Property              | Value         |
+| -------------         |:--------------|
+| figureIcon            | object        |
+| titleTranslateZ       | number        |
+| bodyTextTranslateZ    | number        |
+| buttonTranslateZ      | number        |
 
-## Learn More
+`figureIcon` object
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Property     | Value         |
+| -------------|:--------------|
+| rotation     | number        |
+| translateZ   | number        |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
+
+MIT © [SL-CodeBlaster](https://github.com/SL-CodeBlaster)
