@@ -2,6 +2,16 @@
   "name": "react-3d-animated-card",
   "version": "0.1.0",
   "private": true,
+  "keywords": [
+    "reactjs",
+    "3d-animation",
+    "react-3d",
+    "3d-animated-card",
+    "3d-card",
+    "react-3d-animated-card",
+    "cards",
+    "component"
+  ],
   "dependencies": {
     "@sl-codeblaster/react-3d-animated-card": "^1.0.1",
     "@testing-library/jest-dom": "^5.11.4",
